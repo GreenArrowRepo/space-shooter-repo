@@ -9,14 +9,32 @@ public class Boundary
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject shot;
+    [SerializeField]
+    private Transform shotSpawnPoint;
+    [SerializeField]
+    private float fireRate = 0.25f;
+
     public float speed;
     public float tilt;
     public Boundary boundary;
     private new Rigidbody rigidbody;
+    private float nextFire;
+    
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, shotSpawnPoint.position, shotSpawnPoint.rotation);
+        }
     }
 
     void FixedUpdate()
