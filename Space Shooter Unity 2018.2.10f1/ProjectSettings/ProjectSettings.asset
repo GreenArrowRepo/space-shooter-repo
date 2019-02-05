@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 00000000000000000000000000000000
+  productGUID: 032f8e4096a4e944c880b0c123ed667d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -625,7 +625,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: 1f333f04-965f-4472-ba17-af5920aaf3b5
-  projectName: Space Shooter FREE
+  projectName: Space shooter
   organizationId: hims
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
