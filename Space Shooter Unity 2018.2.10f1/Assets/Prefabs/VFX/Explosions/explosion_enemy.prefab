@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 400012}
   - component: {fileID: 19800012}
   - component: {fileID: 19900012}
+  - component: {fileID: 114497149195703072}
   m_Layer: 0
   m_Name: explosion_enemy
   m_TagString: Untagged
@@ -27649,3 +27650,15 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100012}
   m_IsPrefabAsset: 1
+--- !u!114 &114497149195703072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe5e42fcd3901b4584214d760b61b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 2

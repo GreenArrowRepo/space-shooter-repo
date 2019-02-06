@@ -43,6 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400004}
   - component: {fileID: 19800004}
+  - component: {fileID: 114462830689417146}
   - component: {fileID: 19900004}
   m_Layer: 0
   m_Name: explosion_asteroid
@@ -18389,3 +18390,15 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100004}
   m_IsPrefabAsset: 1
+--- !u!114 &114462830689417146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe5e42fcd3901b4584214d760b61b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 2
