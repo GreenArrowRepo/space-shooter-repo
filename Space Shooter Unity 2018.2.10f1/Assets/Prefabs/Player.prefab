@@ -1208,8 +1208,8 @@ MonoBehaviour:
   speed: 10
   tilt: 4
   boundary:
-    xMin: -5
-    xMax: 5
+    xMin: -4
+    xMax: 4
     zMin: -3
     zMax: 8
 --- !u!136 &136480413766249616

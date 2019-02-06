@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
 
 [System.Serializable]
@@ -22,7 +23,6 @@ public class PlayerController : MonoBehaviour
     private new Rigidbody rigidbody;
     private AudioSource fireAudio;
     private float nextFire;
-    
 
     private void Awake()
     {

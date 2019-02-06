@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
+
 
 public class GameController : MonoBehaviour
 {
@@ -13,10 +14,18 @@ public class GameController : MonoBehaviour
     private float startWait = 1f;
     [SerializeField]
     private float spawnWait = 0.5f;
+
+    [SerializeField]
+    private TMPro.TextMeshProUGUI scoreText;
+
     private float waveWait = 4f;
+    private int score;
+
 
     private void Start()
     {
+        score = 0;
+        UpdateScore();
         StartCoroutine(spawnWaves());
     }
 
@@ -34,5 +43,16 @@ public class GameController : MonoBehaviour
             }
             yield return new WaitForSeconds(waveWait);
         }
+    }
+
+    public void AddScore(int newScoreValue)
+    {
+        score += newScoreValue;
+        UpdateScore();
+    }
+
+    public void UpdateScore()
+    {
+        scoreText.text = "Score " + score;
     }
 }
