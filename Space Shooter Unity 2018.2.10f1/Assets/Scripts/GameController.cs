@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -16,8 +17,16 @@ public class GameController : MonoBehaviour
     private float spawnWait = 0.5f;
 
     [SerializeField]
-    private TMPro.TextMeshProUGUI scoreText;
+    private TextMeshProUGUI scoreText;
 
+    [SerializeField]
+    private TextMeshProUGUI restartText;
+    [SerializeField]
+    private TextMeshProUGUI gameOverText;
+
+    private bool gameOver = false;
+    private bool restart = false;
+   
     private float waveWait = 4f;
     private int score;
 
@@ -26,7 +35,23 @@ public class GameController : MonoBehaviour
     {
         score = 0;
         UpdateScore();
+        gameOver = false;
+        restart = false;
+        restartText.text = "";
+        gameOverText.text = "";
+
         StartCoroutine(spawnWaves());
+    }
+
+    private void Update()
+    {
+        if (restart)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
     }
 
     private IEnumerator spawnWaves()
@@ -42,6 +67,12 @@ public class GameController : MonoBehaviour
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
+            if (gameOver)
+            {
+                restartText.text = "Press 'R' for Restart";
+                restart = true;
+                break;
+            }
         }
     }
 
@@ -54,5 +85,11 @@ public class GameController : MonoBehaviour
     public void UpdateScore()
     {
         scoreText.text = "Score " + score;
+    }
+
+    public void GameOver()
+    {
+        gameOverText.text = "Game Over";
+        gameOver = true;
     }
 }
